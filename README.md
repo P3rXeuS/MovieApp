@@ -1,8 +1,8 @@
-# React + Vite
+# Display Movies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+in this little project called Display Rate Currency I used REACT & VITE TAILWIND
 
-Currently, two official plugins are available:
+and this is the example https://movie-app47.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ This project uses a third-party API from https://www.omdbapi.com/ to display a list of movies retrieved from a third-party data source.
+You can fill in your API code in .env
