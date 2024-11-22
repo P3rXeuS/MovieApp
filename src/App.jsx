@@ -35,7 +35,7 @@ const App = () => {
       <Header title="Movie App" onSearch={handleSearch} />
       <Routes>
         <Route path="/" element={<MovieList movies={movies} />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
+        <Route path="/movie/:id" element={<MovieDetail onSearch={handleSearch} />} />
       </Routes>
     </Router>
   );
