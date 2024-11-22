@@ -1,6 +1,6 @@
 # Display Movies
 
-in this little project called Display Rate Currency I used REACT & VITE TAILWIND
+in this little project called Display Movies I used REACT & VITE TAILWIND
 
 and this is the example https://movie-app47.netlify.app/
 
