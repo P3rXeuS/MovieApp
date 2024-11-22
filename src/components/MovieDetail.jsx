@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
-const MovieDetail = () => {
+const MovieDetail = ({ onSearch }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
   const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -16,6 +17,27 @@ const MovieDetail = () => {
   useEffect(() => {
     fetchMovieDetail();
   }, [id]);
+
+  // Add event listener to Header's search form
+  useEffect(() => {
+    const searchForm = document.querySelector('.search-form');
+    if (searchForm) {
+      const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        const searchInput = searchForm.querySelector('input');
+        if (searchInput) {
+          onSearch(searchInput.value);
+          navigate('/');
+        }
+      };
+      
+      searchForm.addEventListener('submit', handleSearchSubmit);
+      
+      return () => {
+        searchForm.removeEventListener('submit', handleSearchSubmit);
+      };
+    }
+  }, [onSearch, navigate]);
 
   if (!movie) return (
     <div className="flex justify-center items-center min-h-screen">
